@@ -27,7 +27,7 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
 
     private fun init() = with(binding) {
         settingThemes.setOnCheckedChangeListener { radioGroup, checkedId ->
-            val theme =  when(checkedId) {
+            val theme = when (checkedId) {
                 light.id -> Theme.LIGHT
                 night.id -> Theme.NIGHT
                 else -> Theme.AUTO
@@ -36,9 +36,15 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
         }
 
         settingLangs.setOnCheckedChangeListener { radioGroup, checkedId ->
-            val lang =  when(checkedId) {
-                english.id -> Lang.ENGLISH
-                persian.id -> Lang.PERSIAN
+            val lang = when (checkedId) {
+                english.id -> {
+                    binding.button.isEnabled = true
+                    Lang.ENGLISH
+                }
+                persian.id -> {
+                    binding.button.isEnabled = false
+                    Lang.PERSIAN
+                }
                 else -> throw Exception("Invalid lang")
             }
             viewModel.updateLang(lang)
