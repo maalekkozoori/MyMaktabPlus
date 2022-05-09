@@ -16,6 +16,9 @@
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">sans-serif-black</item>
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+        <item name="android:windowAnimationStyle">@style/fade_anim_transition</item>
+
     </style>
 
     <style name="button_custom_style" parent="Widget.MaterialComponents.Button">
@@ -24,6 +27,19 @@
         <item name="android:textSize">32sp</item>
         <item name="cornerRadius">16dp</item>
         <item name="android:layout_marginTop">16sp</item>
+
+    </style>
+
+    <style name="Theme.splash_theme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/window_background_color</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_baseline_architecture_24</item>
+        <item name="postSplashScreenTheme">@style/Theme.MyMaktabPlus</item>
+
+    </style>
+
+    <style name="fade_anim_transition">
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
 
     </style>
 </resources>

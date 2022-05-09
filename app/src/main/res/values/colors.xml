@@ -10,4 +10,6 @@
     <color name="button_background_enabled">#5938EC</color>
     <color name="button_text">#D3E3BE</color>
     <color name="button_background_disabled">#C1BDD5</color>
+
+    <color name="window_background_color">#2AC896</color>
 </resources>
