@@ -20,7 +20,6 @@ class Repository @Inject constructor(
     private val remoteDataSourceIm: RemoteDataSource,
     private val localDataSourceIm: LocalDataSourceIm
 ) {
-    suspend fun getRemoteItemList() = safeApiCall(dispatcher) {
-       remoteDataSourceIm.getRemoteItemList()
-    }
+    suspend fun getRemoteItemList(page: Int, myListSize: Int) =
+        remoteDataSourceIm.getRemoteItemList(page, myListSize)
 }

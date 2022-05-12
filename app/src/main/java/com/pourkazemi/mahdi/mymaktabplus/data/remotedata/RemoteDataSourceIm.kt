@@ -7,8 +7,8 @@ import javax.inject.Singleton
 
 @Singleton
 class RemoteDataSourceIm (val pictureAPIService: PictureAPIService ):RemoteDataSource {
-    override suspend fun getRemoteItemList(): Response<List<PictureItem>> {
-       return pictureAPIService.getItemList(1,100)
+    override suspend fun getRemoteItemList(page: Int,myListSize: Int): Response<List<PictureItem>> {
+       return pictureAPIService.getItemList(page,myListSize)
     }
 
 }
